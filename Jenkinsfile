@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('code checkout'){
             steps {
-                 git barnch: 'master' url:'https://github.com/devvikasmanda/demo-project.git'
+                 git barnch: 'master', url:'https://github.com/devvikasmanda/demo-project.git'
 
             }
         }
