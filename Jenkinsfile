@@ -24,7 +24,7 @@ pipeline{
                     // dir ("./server"){
                     //     sh 'mvn sonar:sonar'
                     // }
-                    sh 'mnv sonar:sonar'
+                    sh 'mvn sonar:sonar'
                 }
             }
         }
