@@ -17,5 +17,15 @@ pipeline{
                 sh 'mvn site'
             }
         }
+        stage ('sonarqube code analysis'){
+            steps{
+                withSonarQubeEnv('my_sonar')
+                {
+                    dir ("./server"){
+                        sh 'mvn sonar:sonar'
+                    }
+                }
+            }
+        }
     }
 }
