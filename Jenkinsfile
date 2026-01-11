@@ -21,9 +21,10 @@ pipeline{
             steps{
                 withSonarQubeEnv('my_sonar')
                 {
-                    dir ("./server"){
-                        sh 'mvn sonar:sonar'
-                    }
+                    // dir ("./server"){
+                    //     sh 'mvn sonar:sonar'
+                    // }
+                    sh 'mnv sonar:sonar'
                 }
             }
         }
