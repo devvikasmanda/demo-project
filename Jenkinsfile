@@ -46,7 +46,7 @@ pipeline {
                             spec: '''{
                                 "files": [{
                                     "pattern": "*.jar",
-                                    "target": "https://www.quinntech.in/artifactory/vikas/"
+                                    "target": "/artifactory/vikas/"
                                 }]
                             }'''
                         )
