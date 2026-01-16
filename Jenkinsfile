@@ -46,7 +46,7 @@ pipeline {
                             spec: '''{
                                 "files": [{
                                     "pattern": "*.jar",
-                                    "target": "/artifactory/vikas/"
+                                    "target": "artifactory/vikas/"
                                 }]
                             }'''
                         )
