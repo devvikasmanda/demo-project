@@ -66,5 +66,18 @@ pipeline {
 
             }
         }
+        stage('Docker Push') {
+            steps {
+                // 'docker-hub-credentials' must be created in Jenkins Credentials
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', 
+                                                 passwordVariable: 'DOCKER_PASS', 
+                                                 usernameVariable: 'DOCKER_USER')]) {
+                    sh "echo ${DOCKER_PASS} | docker login -u ${DOCKER_USER} --password-stdin"
+                    sh "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                    sh "docker push ${DOCKER_IMAGE}:latest"
+                }
+            }
+        }
+
     }
 }
