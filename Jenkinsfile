@@ -19,7 +19,7 @@ pipeline{
         }
         stage ('sonarqube code analysis'){
             steps{
-                withSonarQubeEnv('my_sonar')
+                withSonarQubeEnv('my_sonar1')
                 {
                     // dir ("./server"){
                     //     sh 'mvn sonar:sonar'
@@ -36,5 +36,23 @@ pipeline{
                 if (check.status != 'OK' )
                 error "pipeline aborted due to quality gate failure : ${check.status}"}}
             } 
+        stage('Artifactory_upload') {
+            steps{
+                script {
+                        def server = rtServer (
+                            id: 'jfrog')                                    )
+
+                        dir('./server/target') {
+                            rtUpload (
+                                serverId: 'jfrog',
+                                spec: '''{
+                                    "files": [{ "pattern": "*.jar", "target": "https://www.quinntech.in/artifactory/vikas/" }]
+                                }'''
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 }
