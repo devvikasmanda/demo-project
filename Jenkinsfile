@@ -40,8 +40,7 @@ pipeline{
             steps{
                 script {
                         def server = rtServer (
-                            id: 'jfrog')                                    )
-
+                            id: 'jfrog') 
                         dir('./server/target') {
                             rtUpload (
                                 serverId: 'jfrog',
