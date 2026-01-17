@@ -16,6 +16,13 @@ pipeline{
                 sh 'mvn site'
             }
         }
+        stage('sonarqube code analysis') {
+            steps {
+                withSonarQubeEnv('vikas') {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
     }
         
 }
