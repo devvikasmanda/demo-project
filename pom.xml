@@ -66,6 +66,13 @@
 
   <dependencyManagement>
     <dependencies>
+             <!-- Source: https://mvnrepository.com/artifact/com.daml/bindings-java -->
+<dependency>
+    <groupId>com.daml</groupId>
+    <artifactId>bindings-java</artifactId>
+    <version>3.5.0-adhoc.20251211.14502.0.v4c63279c</version>
+    <scope>compile</scope>
+</dependency>
       <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>servlet-api</artifactId>
