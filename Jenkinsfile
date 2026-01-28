@@ -1,10 +1,9 @@
 pipeline{
   agent any
-  stages{
-    stage("sample"){
-      steps{
-       sh ' echo hi'
-      }
-    }
+  stages { 
+        stage('code checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/devvikasmanda/demo-project.git'
+            }
+        }
   }
-}
