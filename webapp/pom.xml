@@ -4,12 +4,12 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
+    <!-- <parent>
         <groupId>com.example.maven-project</groupId>
         <artifactId>maven-project</artifactId>
         <version>24.02.01-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
-    </parent>
+    </parent> -->
 
     <artifactId>webapp</artifactId>
     <packaging>war</packaging>
