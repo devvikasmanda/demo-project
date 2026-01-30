@@ -39,12 +39,12 @@
             </configuration>
       </plugin>
 
-<!--      <plugin>-->
-<!--        <artifactId>maven-release-plugin</artifactId>-->
-<!--        <configuration>-->
-<!--          <autoVersionSubmodules>true</autoVersionSubmodules>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
+     <plugin>
+      <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+        <autoVersionSubmodules>true</autoVersionSubmodules>
+        </configuration>
+     </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
