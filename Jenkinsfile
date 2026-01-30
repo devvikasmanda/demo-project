@@ -4,7 +4,7 @@ pipeline{
         stage('code checkout') {
             steps {
               
-                git branch: 'master', url: 'https://github.com/devvikasmanda/demo-project.git'
+                git branch: '3rd', url: 'https://github.com/devvikasmanda/demo-project.git'
             }
         }
     stage('maven build') {
