@@ -10,9 +10,8 @@
   <version>24.02.01-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>Maven Project</name>
-  <description>Sample Maven multi-module project</description>
-  <url>http://www.example.com</url>
+  <name>Maven Parent Project</name>
+  <description>Parent POM for multi-module Maven project</description>
 
   <!-- ===================== PROPERTIES ===================== -->
   <properties>
@@ -28,11 +27,10 @@
     <module>webapp</module>
   </modules>
 
-  <!-- ===================== BUILD ===================== -->
+  <!-- ===================== BUILD PLUGINS ===================== -->
   <build>
     <plugins>
 
-      <!-- Java 17 Compiler -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -43,18 +41,10 @@
         </configuration>
       </plugin>
 
-      <!-- Unit Tests -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.1.2</version>
-      </plugin>
-
-      <!-- Site Plugin -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.12.1</version>
       </plugin>
 
     </plugins>
@@ -64,13 +54,7 @@
   <dependencyManagement>
     <dependencies>
 
-      <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>4.0.1</version>
-        <scope>provided</scope>
-      </dependency>
-
+      <!-- JUnit -->
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
@@ -78,31 +62,22 @@
         <scope>test</scope>
       </dependency>
 
+      <!-- Hamcrest -->
       <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-core</artifactId>
-        <version>5.7.0</version>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-core</artifactId>
+        <version>1.3</version>
+        <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-library</artifactId>
+        <version>1.3</version>
         <scope>test</scope>
       </dependency>
 
     </dependencies>
   </dependencyManagement>
-
-  <!-- ===================== SCM ===================== -->
-  <scm>
-    <connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>
-    <developerConnection>scm:git:git@github.com:jleetutorial/maven-project.git</developerConnection>
-    <tag>HEAD</tag>
-    <url>https://github.com/jleetutorial/maven-project</url>
-  </scm>
-
-  <!-- ===================== DISTRIBUTION ===================== -->
-  <distributionManagement>
-    <repository>
-      <id>central</id>
-      <name>artifactory-releases</name>
-      <url>http://3.110.127.32:8081/artifactory/libs-release</url>
-    </repository>
-  </distributionManagement>
 
 </project>
