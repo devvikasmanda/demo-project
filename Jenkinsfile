@@ -4,7 +4,7 @@ pipeline {
         DOCKER_IMAGE    = "vikasmanda/final-project-app"
         DOCKER_TAG      = "${BUILD_NUMBER}"
     }
-
+ 
     stages {  
         stage('code checkout') {
             steps {
